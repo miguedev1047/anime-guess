@@ -1,0 +1,3 @@
+{
+  "extends": "@anime-guess/config/tsconfig.base.json",
+}

@@ -1,0 +1,24 @@
+{
+  "name": "@anime-guess/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@anime-guess/db": "workspace:*",
+    "@anime-guess/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@anime-guess/config": "workspace:*",
+    "typescript": "^5"
+  }
+}
