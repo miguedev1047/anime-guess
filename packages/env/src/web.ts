@@ -1,13 +1,11 @@
-import { createEnv } from "@t3-oss/env-core";
-import * as z from "zod";
+const requireEnv = (key: string): string => {
+	const value = import.meta.env[key];
+	if (!value) {
+		throw new Error(`Missing required environment variable: ${key}`);
+	}
+	return value;
+};
 
-export const env = createEnv({
-	clientPrefix: "VITE_",
-	client: {
-		VITE_SERVER_URL: z.url(),
-	},
-	runtimeEnv: {
-		VITE_SERVER_URL: import.meta.env.VITE_SERVER_URL,
-	},
-	emptyStringAsUndefined: true,
-});
+export const env = {
+	VITE_SERVER_URL: requireEnv("VITE_SERVER_URL"),
+};
